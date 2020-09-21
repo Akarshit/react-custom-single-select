@@ -103,12 +103,18 @@ Find more examples here:
 ### props
 
 `options` - An array of strings or objects. If objects, each object must either contain the `label` property or `comp` property.
+
 `options.label` - string to be rendered in the select dropdown.
+
 `options.comp` - component to render in place of the option, it will be rendered as is.
+
 `options.style` - style to be applied to this item.
+
 `placeholder` - the placeholder text to be displayed in the select component
+
 `onSelect` - function with the signature `onSelect(option, { index } )`. This function will be called with the first parameter as the selected option and the second an obect with property `index` which is the selected index.
-`customStyle` - accepts a stle object with the following properties:
+
+`customStyle` - accepts a style object with the following properties:
 
 1. `Container`: These style will be applied to whole container of select.
 1. `Item`: These style will be applied to the individual item
