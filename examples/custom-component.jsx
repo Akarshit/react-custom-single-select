@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AkarshitSelect from 'akarshit-select';
+import SingleSelect from 'react-custom-single-select';
 
 const Puppy = (props) => {
   return (
@@ -50,7 +50,7 @@ function App() {
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>
-        <AkarshitSelect
+        <SingleSelect
           options={options}
           customStyle={customStyle}
           onSelect={itemSelectedCallback}

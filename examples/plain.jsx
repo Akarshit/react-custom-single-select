@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AkarshitSelect from 'akarshit-select';
+import SingleSelect from 'react-custom-single-select';
 
 function App() {
   const options = ['Apple', 'Banana', 'Cherry', 'Dates', 'Eggfruit'];
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>
-        <AkarshitSelect options={options} onSelect={itemSelectedCallback} />
+        <SingleSelect options={options} onSelect={itemSelectedCallback} />
         <h1>Bottom Text</h1>
       </div>
     </div>

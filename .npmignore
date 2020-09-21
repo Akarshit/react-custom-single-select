@@ -1,9 +1,13 @@
 # dependencies
 /node_modules
 
+# testing
+./index.js
+
 # source
 /src
 /examples
+/public
 
 #configs
 .eslintrc.js

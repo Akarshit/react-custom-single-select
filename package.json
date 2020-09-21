@@ -1,11 +1,11 @@
 {
-  "name": "akarshit-select",
+  "name": "react-custom-single-select",
   "description": "custom single select component",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/akarshit/akarshit-select.git"
+    "url": "https://github.com/akarshit/react-custom-single-select.git"
   },
   "keywords": [
     "react",
@@ -15,9 +15,9 @@
   "author": "Akarshit Wal",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/akarshit/akarshit-select/issues"
+    "url": "https://github.com/akarshit/react-custom-single-select/issues"
   },
-  "homepage": "https://github.com/akarshit/akarshit-select/",
+  "homepage": "https://github.com/akarshit/react-custom-single-select/",
   "dependencies": {
     "@stitches/react": "0.0.2"
   },

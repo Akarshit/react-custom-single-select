@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AkarshitSelect from 'akarshit-select';
+import SingleSelect from 'react-custom-single-select';
 
 function App() {
   const options = [
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>
-        <AkarshitSelect options={options} customStyle={customStyle} />
+        <SingleSelect options={options} customStyle={customStyle} />
         <h1>Bottom Text</h1>
       </div>
     </div>

@@ -1,3 +1,3 @@
-import AkarshitSelect from './components/AkarshitSelect.jsx';
+import SingleSelect from './components/SingleSelect.jsx';
 
-export default AkarshitSelect;
+export default SingleSelect;

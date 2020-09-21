@@ -10,7 +10,7 @@ const Container = styled('div', {
   height: '2em',
 });
 
-const AkarshitSelect = (props) => {
+const SingleSelect = (props) => {
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState(-1);
   const {
@@ -48,4 +48,4 @@ const AkarshitSelect = (props) => {
   );
 };
 
-export default AkarshitSelect;
+export default SingleSelect;

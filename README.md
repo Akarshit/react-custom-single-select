@@ -1,6 +1,6 @@
 This project is for learning purpose and attempts to imitate react-select. Do not use this in production!
 
-akarshit-select is custom single select component that can use used in place of HTML <select>. This components gives you some powerful features beyond the HTML select tag.
+react-custom-single-select is custom single select component that can use used in place of HTML <select>. This components gives you some powerful features beyond the HTML select tag.
 
 #### Features
 
@@ -9,26 +9,26 @@ akarshit-select is custom single select component that can use used in place of 
 
 ### Installation
 
-`npm install --save akarshit-select`
+`npm install --save react-custom-single-select`
 or
-`yarn add akarshit-select`
+`yarn add react-custom-single-select`
 
 ### Usage
 
 #### Basic
 
 ```js
-import { AkarshitSelect } from "akarshit-select";
+import { SingleSelect } from 'react-custom-single-select';
 
 function App() {
-  const options = ["Apple", "Banana", "Cherry", "Dates", "Eggfruit"];
+  const options = ['Apple', 'Banana', 'Cherry', 'Dates', 'Eggfruit'];
   const itemSelectedCallback = (option, { index }) => {
     console.log(`Selected option at index ${index} is`, option);
   };
   return (
-    <div className="App">
-      <div style={{ margin: "50px" }}>
-        <AkarshitSelect options={options} onSelect={itemSelectedCallback} />
+    <div className='App'>
+      <div style={{ margin: '50px' }}>
+        <SingleSelect options={options} onSelect={itemSelectedCallback} />
         <h1>Bottom Text</h1>
       </div>
     </div>
@@ -39,22 +39,22 @@ function App() {
 #### Advance
 
 ```js
-import { AkarshitSelect } from "./akarshit-select";
+import { SingleSelect } from './react-custom-single-select';
 
 const Puppy = (props) => {
   return (
     <div
       style={{
-        minHeight: "10px",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        paddingLeft: "10px"
+        minHeight: '10px',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingLeft: '10px',
       }}
     >
       <img
-        style={{ height: "40px", width: "40px", marginRight: "10px" }}
-        src="https://images.unsplash.com/photo-1600369671738-fa3a43efeced?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+        style={{ height: '40px', width: '40px', marginRight: '10px' }}
+        src='https://images.unsplash.com/photo-1600369671738-fa3a43efeced?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
       />
       <p>Puppy</p>
     </div>
@@ -64,27 +64,27 @@ const Puppy = (props) => {
 function App() {
   const options = [
     {
-      label: "Puppy",
-      comp: Puppy
+      label: 'Puppy',
+      comp: Puppy,
     },
-    { label: "Banana" },
-    "Cherry"
+    { label: 'Banana' },
+    'Cherry',
   ];
   const customStyle = {
     List: {
-      backgroundColor: "pink"
+      backgroundColor: 'pink',
     },
     Item: {
-      fontSize: "10px"
-    }
+      fontSize: '10px',
+    },
   };
   const itemSelectedCallback = (option, { index }) => {
     console.log(`Selected option at index ${index} is`, option);
   };
   return (
-    <div className="App">
-      <div style={{ margin: "50px" }}>
-        <AkarshitSelect
+    <div className='App'>
+      <div style={{ margin: '50px' }}>
+        <SingleSelect
           options={options}
           customStyle={customStyle}
           onSelect={itemSelectedCallback}
