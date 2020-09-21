@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { Item } from "./Item";
-import { styled } from "./styles";
+import React, { useState } from 'react';
+import { Item } from './Item';
+import { styled } from './styles';
 
-const Box = styled("div", {
-  borderRadius: "5px",
-  border: "1px soplid",
-  color: "#444",
-  display: "flex",
-  flexDirection: "column",
-  maxHeight: "20em",
-  marginTop: "7px",
+const Box = styled('div', {
+  borderRadius: '5px',
+  border: '1px solid',
+  borderColor: '#ccc',
+  color: '#444',
+  display: 'flex',
+  flexDirection: 'column',
+  maxHeight: '20em',
+  marginTop: '7px',
   zIndex: 1000,
-  backgroundColor: "white",
-  paddingBottom: "4px"
+  backgroundColor: 'white',
+  paddingBottom: '4px',
+  paddingTop: '4px',
 });
 
 export const List = (props) => {
@@ -29,6 +31,7 @@ export const List = (props) => {
           index={i}
           selected={selected}
           customStyle={customStyle}
+          key={i}
         />
       ))}
     </Box>

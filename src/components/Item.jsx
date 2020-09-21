@@ -1,39 +1,39 @@
-import React, { useState } from "react";
-import { styled } from "./styles";
+import React, { useState } from 'react';
+import { styled } from './styles';
 
-const Label = styled("div", {
-  color: "#444",
-  display: "flex",
-  paddingTop: "2px",
-  paddingBottom: "2px",
-  alignItems: "center",
-  paddingLeft: "10px",
-  paddingRight: "10px",
-  minHeight: "1.5em",
-  cursor: "pointer",
+const Label = styled('div', {
+  color: '#444',
+  display: 'flex',
+  paddingTop: '2px',
+  paddingBottom: '2px',
+  alignItems: 'center',
+  paddingLeft: '10px',
+  paddingRight: '10px',
+  minHeight: '1.5em',
+  cursor: 'pointer',
   variants: {
     isSelected: {
       true: {
-        backgroundColor: "#007bff",
-        ":hover": {
-          backgroundColor: "rgb(38, 132, 255)"
-        }
+        backgroundColor: '#007bff',
+        ':hover': {
+          backgroundColor: 'rgb(38, 132, 255)',
+        },
       },
       false: {
-        backgroundColor: "transparent",
-        ":hover": {
-          backgroundColor: "rgb(238, 245, 255)"
-        }
-      }
+        backgroundColor: 'transparent',
+        ':hover': {
+          backgroundColor: 'rgb(238, 245, 255)',
+        },
+      },
     },
     isHeader: {
       true: {
-        ":hover": {
-          backgroundColor: "transparent"
-        }
-      }
-    }
-  }
+        ':hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
 });
 
 export const Item = (props) => {
@@ -44,10 +44,10 @@ export const Item = (props) => {
     selected,
     isHeader,
     customStyle,
-    placeholder
+    placeholder,
   } = props;
   const isSelected = index === selected;
-  let label = placeholder ?? "Choose option...";
+  let label = placeholder ?? 'Choose option...';
   if (isHeader && selected >= 0) {
     label = option?.label ?? option;
   }
@@ -62,7 +62,7 @@ export const Item = (props) => {
   };
   const overrideStyle = {
     ...customStyle?.Item,
-    ...option?.style
+    ...option?.style,
   };
   return (
     <div onClick={onSelected}>
@@ -70,12 +70,12 @@ export const Item = (props) => {
         <option.comp
           css={overrideStyle}
           isSelected={isSelected.toString()}
-          isHeader={isHeader?.toString() ?? "false"}
+          isHeader={isHeader?.toString() ?? 'false'}
         />
       ) : (
         <Label
           isSelected={isSelected.toString()}
-          isHeader={isHeader?.toString() ?? "false"}
+          isHeader={isHeader?.toString() ?? 'false'}
           css={overrideStyle}
         >
           {label}

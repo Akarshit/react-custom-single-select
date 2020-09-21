@@ -1,34 +1,42 @@
-import React from "react";
-import "./App.css";
-import { AkarshitSelect } from "akarshit-select";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import AkarshitSelect from 'akarshit-select';
 
 function App() {
   const options = [
     {
-      label: "Apple",
-      style: { backgroundColor: "red" }
+      label: 'Apple',
+      style: { backgroundColor: 'red' },
     },
-    { label: "Banana" },
-    "Cherry",
-    { label: "Dates" },
-    { label: "Eggfruit" }
+    { label: 'Banana' },
+    'Cherry',
+    { label: 'Dates' },
+    { label: 'Eggfruit' },
   ];
   const customStyle = {
     List: {
-      backgroundColor: "pink"
+      backgroundColor: 'pink',
     },
     Item: {
-      fontSize: "10px"
-    }
+      fontSize: '10px',
+    },
   };
   return (
-    <div className="App">
-      <div style={{ margin: "50px" }}>
+    <div className='App'>
+      <div style={{ margin: '50px' }}>
         <AkarshitSelect options={options} customStyle={customStyle} />
         <h1>Bottom Text</h1>
       </div>
     </div>
   );
 }
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  rootElement,
+);
 
 export default App;

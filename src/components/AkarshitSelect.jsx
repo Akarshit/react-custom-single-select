@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import styled from "@emotion/styled";
 import { HeaderBox } from './HeaderBox';
 import { List } from './List';
 import { styled } from './styles.jsx';
@@ -21,14 +20,13 @@ const AkarshitSelect = (props) => {
     onSelect,
   } = props;
   const handleSelect = (index) => {
-    console.log('handle seelct', index);
     setSelected(index);
     setOpen(false);
     onSelect?.(options[index], { index });
   };
   const displayText = selected >= 0 ? options[selected].label : placeholder;
   return (
-    <Container>
+    <Container css={customStyle?.Container ?? {}}>
       <HeaderBox
         isOpen={isOpen}
         setOpen={setOpen}

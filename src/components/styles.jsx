@@ -1,8 +1,8 @@
-import { createStyled } from "@stitches/react";
+import { createStyled } from '@stitches/react';
 
 export const { styled, css } = createStyled({
-  prefix: "",
+  prefix: '',
   tokens: {},
   breakpoints: {},
-  utils: {}
+  utils: {},
 });
