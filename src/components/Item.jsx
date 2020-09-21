@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { styled } from './styles';
 
 const Label = styled('div', {
@@ -36,7 +38,7 @@ const Label = styled('div', {
   },
 });
 
-export const Item = (props) => {
+const Item = (props) => {
   const {
     index,
     option,
@@ -61,8 +63,8 @@ export const Item = (props) => {
     handleSelect(index);
   };
   const overrideStyle = {
-    ...customStyle?.Item,
-    ...option?.style,
+    ...customStyle.Item,
+    ...option.style,
   };
   return (
     <div onClick={onSelected}>
@@ -70,12 +72,12 @@ export const Item = (props) => {
         <option.comp
           css={overrideStyle}
           isSelected={isSelected.toString()}
-          isHeader={isHeader?.toString() ?? 'false'}
+          isHeader={isHeader.toString()}
         />
       ) : (
         <Label
           isSelected={isSelected.toString()}
-          isHeader={isHeader?.toString() ?? 'false'}
+          isHeader={isHeader.toString()}
           css={overrideStyle}
         >
           {label}
@@ -84,3 +86,25 @@ export const Item = (props) => {
     </div>
   );
 };
+
+Item.defaultProps = {
+  // -1 might be uesd for header position
+  index: -9,
+  option: null,
+  handleSelect: null,
+  isHeader: false,
+  customStyle: {},
+  placeholder: null,
+};
+
+Item.propTypes = {
+  index: PropTypes.number,
+  option: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  handleSelect: PropTypes.func,
+  isHeader: PropTypes.bool,
+  customStyle: PropTypes.object,
+  placeholder: PropTypes.string,
+  selected: PropTypes.number.isRequired,
+};
+
+export default Item;

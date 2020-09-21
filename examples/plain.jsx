@@ -4,9 +4,11 @@ import SingleSelect from 'react-custom-single-select';
 
 function App() {
   const options = ['Apple', 'Banana', 'Cherry', 'Dates', 'Eggfruit'];
+
   const itemSelectedCallback = (option, { index }) => {
     console.log(`Selected option at index ${index} is`, option);
   };
+
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>

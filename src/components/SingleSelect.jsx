@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { HeaderBox } from './HeaderBox';
-import { List } from './List';
+import PropTypes from 'prop-types';
+
+import HeaderBox from './HeaderBox';
+import List from './List';
 import { styled } from './styles.jsx';
 
 const Container = styled('div', {
@@ -13,12 +15,7 @@ const Container = styled('div', {
 const SingleSelect = (props) => {
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState(-1);
-  const {
-    options,
-    placeholder = 'Choose option...',
-    customStyle,
-    onSelect,
-  } = props;
+  const { options, placeholder, customStyle, onSelect } = props;
   const handleSelect = (index) => {
     setSelected(index);
     setOpen(false);
@@ -46,6 +43,19 @@ const SingleSelect = (props) => {
       />
     </Container>
   );
+};
+
+SingleSelect.defaultProps = {
+  placeholder: 'Choose option...',
+  customStyle: {},
+  options: [],
+};
+
+SingleSelect.propTypes = {
+  options: PropTypes.array.isRequired,
+  placeholder: PropTypes.string,
+  customStyle: PropTypes.object,
+  onSelect: PropTypes.func,
 };
 
 export default SingleSelect;

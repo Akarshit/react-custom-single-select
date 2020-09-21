@@ -6,7 +6,7 @@ function App() {
   const options = [
     {
       label: 'Apple',
-      style: { backgroundColor: 'red' },
+      style: { fontStyle: 'italic' },
     },
     { label: 'Banana' },
     'Cherry',
@@ -18,13 +18,20 @@ function App() {
       backgroundColor: 'pink',
     },
     Item: {
-      fontSize: '10px',
+      fontSize: '18px',
     },
+  };
+  const itemSelectedCallback = (option, { index }) => {
+    console.log(`Selected option at index ${index} is`, option);
   };
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>
-        <SingleSelect options={options} customStyle={customStyle} />
+        <SingleSelect
+          options={options}
+          customStyle={customStyle}
+          onSelect={itemSelectedCallback}
+        />
         <h1>Bottom Text</h1>
       </div>
     </div>

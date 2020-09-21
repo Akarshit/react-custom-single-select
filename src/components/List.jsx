@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { Item } from './Item';
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import Item from './Item';
 import { styled } from './styles';
 
 const Box = styled('div', {
@@ -17,13 +19,13 @@ const Box = styled('div', {
   paddingTop: '4px',
 });
 
-export const List = (props) => {
+const List = (props) => {
   const { isOpen, handleSelect, options, selected, customStyle } = props;
   if (!isOpen) {
     return null;
   }
   return (
-    <Box css={customStyle?.List ?? {}}>
+    <Box css={customStyle.List}>
       {options.map((option, i) => (
         <Item
           option={option}
@@ -37,3 +39,13 @@ export const List = (props) => {
     </Box>
   );
 };
+
+Item.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  handleSelect: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  selected: PropTypes.number.isRequired,
+  customStyle: PropTypes.object.isRequired,
+};
+
+export default List;

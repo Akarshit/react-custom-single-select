@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { styled } from './styles';
-import { Item } from './Item';
+import Item from './Item';
 
 const Arrow = styled('div', {
   border: 'solid',
@@ -39,7 +41,7 @@ const Box = styled('div', {
   },
 });
 
-export const HeaderBox = (props) => {
+const HeaderBox = (props) => {
   const {
     setOpen,
     isOpen,
@@ -65,3 +67,14 @@ export const HeaderBox = (props) => {
     </Box>
   );
 };
+
+HeaderBox.propTypes = {
+  setOpen: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  options: PropTypes.array.isRequired,
+  selected: PropTypes.number.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  customStyle: PropTypes.object.isRequired,
+};
+
+export default HeaderBox;
