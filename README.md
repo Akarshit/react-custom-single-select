@@ -1,6 +1,6 @@
 This project is for learning purpose and attempts to imitate react-select. Do not use this in production!
 
-react-custom-single-select is custom single select component that can use used in place of HTML <select>. This components gives you some powerful features beyond the HTML select tag.
+react-custom-single-select is custom single select component that can use used in place of HTML `<select>`. This components gives you some powerful features beyond the HTML select tag.
 
 #### Features
 
@@ -110,5 +110,6 @@ Find more examples here:
 `onSelect` - function with the signature `onSelect(option, { index } )`. This function will be called with the first parameter as the selected option and the second an obect with property `index` which is the selected index.
 `customStyle` - accepts a stle object with the following properties:
 
+1. `Container`: These style will be applied to whole container of select.
 1. `Item`: These style will be applied to the individual item
-2. `List`: These style will be applied to the dropdown list.
+1. `List`: These style will be applied to the dropdown list.
