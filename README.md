@@ -1,9 +1,12 @@
+# Single Select
+
 This project is for learning purpose and attempts to imitate react-select. Do not use this in production!
 
 react-custom-single-select is custom single select component that can use used in place of HTML `<select>`. This components gives you some powerful features beyond the HTML select tag.
 
 ## Demo
 
+[Live demo](https://codesandbox.io/s/gallant-feynman-0w3f6?file=/src/App.js:628-640)
 ![Single select demo](http://g.recordit.co/YKwHaHAVxB.gif)
 
 #### Features
