@@ -62,13 +62,13 @@ export default function App() {
   };
   return (
     <div className='App' style={{ height: '100vh', padding: '20px' }}>
-      <h1>Hello CodeSandbox</h1>
+      <h1>Hello SingleSelect</h1>
       <SingleSelect
         options={options}
         customStyle={customStyle}
         onSelect={itemSelectedCallback}
       />
-      <h2>Start editing to see some magic happen!</h2>
+      <h2>Checkout this cool select component!</h2>
     </div>
   );
 }

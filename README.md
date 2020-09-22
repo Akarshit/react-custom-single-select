@@ -2,6 +2,10 @@ This project is for learning purpose and attempts to imitate react-select. Do no
 
 react-custom-single-select is custom single select component that can use used in place of HTML `<select>`. This components gives you some powerful features beyond the HTML select tag.
 
+## Demo
+
+![Single select demo](http://g.recordit.co/YKwHaHAVxB.gif)
+
 #### Features
 
 1. Pass custom component in place of options.
@@ -18,13 +22,15 @@ or
 #### Basic
 
 ```js
-import { SingleSelect } from 'react-custom-single-select';
+import SingleSelect from 'react-custom-single-select';
 
 function App() {
   const options = ['Apple', 'Banana', 'Cherry', 'Dates', 'Eggfruit'];
+
   const itemSelectedCallback = (option, { index }) => {
     console.log(`Selected option at index ${index} is`, option);
   };
+
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>
@@ -39,13 +45,14 @@ function App() {
 #### Advance
 
 ```js
-import { SingleSelect } from './react-custom-single-select';
+import SingleSelect from 'react-custom-single-select';
 
-const Puppy = (props) => {
+const Row = (props) => {
+  const { src, text } = props;
   return (
     <div
       style={{
-        minHeight: '10px',
+        minHeight: '40px',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -53,50 +60,56 @@ const Puppy = (props) => {
       }}
     >
       <img
-        style={{ height: '40px', width: '40px', marginRight: '10px' }}
-        src='https://images.unsplash.com/photo-1600369671738-fa3a43efeced?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
+        style={{
+          height: '30px',
+          width: '30px',
+          marginRight: '10px',
+          borderRadius: 20,
+        }}
+        src={src}
       />
-      <p>Puppy</p>
+      <div>{text}</div>
     </div>
   );
 };
 
-function App() {
-  const options = [
+export default function App() {
+  const data = [
     {
-      label: 'Puppy',
-      comp: Puppy,
+      src:
+        'https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80',
+      text: 'Cat',
     },
-    { label: 'Banana' },
-    'Cherry',
+    {
+      src:
+        'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&auto=format&fit=crop&w=93&q=80',
+      text: 'Dog',
+    },
   ];
+  const options = data.map((d) => React.createElement(Row, d));
   const customStyle = {
-    List: {
-      backgroundColor: 'pink',
-    },
-    Item: {
-      fontSize: '10px',
+    Container: {
+      height: '2em',
     },
   };
   const itemSelectedCallback = (option, { index }) => {
     console.log(`Selected option at index ${index} is`, option);
   };
   return (
-    <div className='App'>
-      <div style={{ margin: '50px' }}>
-        <SingleSelect
-          options={options}
-          customStyle={customStyle}
-          onSelect={itemSelectedCallback}
-        />
-        <h1>Bottom Text</h1>
-      </div>
+    <div className='App' style={{ height: '100vh', padding: '20px' }}>
+      <h1>React Select</h1>
+      <SingleSelect
+        options={options}
+        customStyle={customStyle}
+        onSelect={itemSelectedCallback}
+      />
+      <h2>Checkout this cool select component</h2>
     </div>
   );
 }
 ```
 
-Find more examples here:
+Find more examples [here](https://github.com/Akarshit/react-custom-single-select/tree/master/examples).
 
 ## API
 

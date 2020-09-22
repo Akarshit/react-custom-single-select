@@ -49,23 +49,29 @@ const Item = (props) => {
     placeholder,
   } = props;
   const isSelected = index === selected;
-  let label = placeholder ?? 'Choose option...';
+
+  // getting labes based on if the component is header or not
+  let label = placeholder;
   if (isHeader && selected >= 0) {
     label = option?.label ?? option;
   }
   if (!isHeader) {
     label = option?.label ?? option;
   }
+
   const onSelected = () => {
+    // click on header yields nothing
     if (isHeader) {
       return;
     }
     handleSelect(index);
   };
+
   const overrideStyle = {
     ...customStyle.Item,
-    ...option.style,
+    ...option?.style,
   };
+
   return (
     <div onClick={onSelected}>
       {option?.comp ? (

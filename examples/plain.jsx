@@ -12,8 +12,9 @@ function App() {
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>
+        <h1>Hello SingleSelect</h1>
         <SingleSelect options={options} onSelect={itemSelectedCallback} />
-        <h1>Bottom Text</h1>
+        <h2>Checkout this cool select component!</h2>
       </div>
     </div>
   );

@@ -21,18 +21,20 @@ function App() {
       fontSize: '18px',
     },
   };
+
   const itemSelectedCallback = (option, { index }) => {
     console.log(`Selected option at index ${index} is`, option);
   };
   return (
     <div className='App'>
       <div style={{ margin: '50px' }}>
+        <h1>Hello SingleSelect</h1>
         <SingleSelect
           options={options}
           customStyle={customStyle}
           onSelect={itemSelectedCallback}
         />
-        <h1>Bottom Text</h1>
+        <h2>Checkout this cool select component!</h2>
       </div>
     </div>
   );
