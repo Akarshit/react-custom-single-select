@@ -139,7 +139,7 @@ Find more examples [here](https://github.com/Akarshit/react-custom-single-select
 
 ### Styling guide:
 
-The package uses https://stitches.dev/ for styling. You can pass any compatible style in the `customStyle` object. A few important properties to help you styling the component are:
+The package uses https://stitches.dev/ for styling. You can pass any compatible style in the `customStyle` object. A few important properties to help you style the component are:
 
 1. `Item.isSelected`: set to "true" if item is selected, else "false". Note this is a string not boolean.
 1. `Item.isHeader`: set to "true" if item is being displayed in the Header, else "false". Note this is a string not boolean.
