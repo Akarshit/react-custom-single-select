@@ -133,5 +133,13 @@ Find more examples [here](https://github.com/Akarshit/react-custom-single-select
 `customStyle` - accepts a style object with the following properties:
 
 1. `Container`: These style will be applied to whole container of select.
-1. `Item`: These style will be applied to the individual item
+1. `Header`: These style will be applied to the header of select component.
 1. `List`: These style will be applied to the dropdown list.
+1. `Item`: These style will be applied to the individual item
+
+### Styling guide:
+
+The package uses https://stitches.dev/ for styling. You can pass any compatible style in the `customStyle` object. A few important properties to help you styling the component are:
+
+1. `Item.isSelected`: set to "true" if item is selected, else "false". Note this is a string not boolean.
+1. `Item.isHeader`: set to "true" if item is being displayed in the Header, else "false". Note this is a string not boolean.
