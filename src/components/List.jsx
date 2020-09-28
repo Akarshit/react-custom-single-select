@@ -12,6 +12,7 @@ const Box = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   maxHeight: '20em',
+  overflow: 'scroll',
   marginTop: '7px',
   zIndex: 1000,
   backgroundColor: 'white',
